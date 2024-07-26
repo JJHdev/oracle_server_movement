@@ -61,14 +61,11 @@ WHERE
   FROM   dba_data_files
   WHERE  tablespace_name = 'USERS';
   
-  SELECT 4194303 * 8192 *2 / 1024 / 1024 AS max_size_mb FROM dual;
-  
-  
   SELECT tablespace_name, file_name, bytes/1024/1024 AS size_mb, autoextensible
   FROM dba_data_files
   WHERE tablespace_name = 'USERS';
   
   ALTER TABLESPACE users
-  ADD DATAFILE 'C:\TOOLS\ORADATA\ORCL\USERS04.DBF' SIZE 20G;
+  ADD DATAFILE '상단에테이블스페이스경로 나옴' SIZE 20G;
   
-  ALTER DATABASE DATAFILE 'C:\TOOLS\ORADATA\ORCL\USERS04.DBF' AUTOEXTEND ON NEXT 1G MAXSIZE UNLIMITED;
+  ALTER DATABASE DATAFILE '상단에테이블스페이스경로 나옴' AUTOEXTEND ON NEXT 1G MAXSIZE UNLIMITED;
